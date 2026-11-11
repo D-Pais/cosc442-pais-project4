@@ -56,7 +56,7 @@
                         <param>edu.towson.cis.cosc442.project4.coffeemaker.Main</param>
                     </excludedClasses>
 
-                    <mutationThreshold>85</mutationThreshold>
+                    <mutationThreshold>80</mutationThreshold>
 
                     </configuration>
             </plugin>

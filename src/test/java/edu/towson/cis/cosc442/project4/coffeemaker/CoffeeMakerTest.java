@@ -121,7 +121,7 @@ public class CoffeeMakerTest {
     }
 
     @Test
-    void editRecipe() {
+    void editRecipeTest() {
         cm.addRecipe(rec);
         cm.addRecipe(rec2);
         cm.addRecipe(rec3);
@@ -136,7 +136,7 @@ public class CoffeeMakerTest {
         assert(cm.editRecipe(rec, recDupe));
     }
     @Test
-    void editRecipeEmptyMachine() {
+    void editRecipeEmptyMachineTest() {
         assert(!cm.editRecipe(rec, rec));
     }
 

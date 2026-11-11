@@ -28,7 +28,7 @@ public class InventoryTest {
         rec = null;
     }
 
-    
+
     @Test
     void testCoffeeSetGet() {
         inv.setCoffee(20);
@@ -37,7 +37,7 @@ public class InventoryTest {
         assertEquals(0, inv.getCoffee());
     }
     @Test
-    void setCoffeeNegative() {
+    void setCoffeeNegativeTest() {
         inv.setCoffee(-5);
         assertEquals(0, inv.getCoffee());
     }
@@ -48,7 +48,7 @@ public class InventoryTest {
         assertEquals(25, inv.getMilk());
     }
     @Test
-    void setMilkNegative() {
+    void setMilkNegativeTest() {
         inv.setMilk(-10);
         assertEquals(0, inv.getMilk());
     }
@@ -59,7 +59,7 @@ public class InventoryTest {
         assertEquals(30, inv.getSugar());
     }
     @Test
-    void setSugarNegative() {
+    void setSugarNegativeTest() {
         inv.setSugar(-15);
         assertEquals(0, inv.getSugar());
     }
@@ -70,13 +70,13 @@ public class InventoryTest {
         assertEquals(35, inv.getChocolate());
     }
     @Test
-    void setChocolateNegative() {
+    void setChocolateNegativeTest() {
         inv.setChocolate(-20);
         assertEquals(0, inv.getChocolate());
     }
 
     @Test
-    void testEnoughIngredients() {
+    void enoughIngredientsTest() {
         assert(inv.enoughIngredients(rec));
     }
     @Test
@@ -95,7 +95,7 @@ public class InventoryTest {
     }
 
     @Test
-    void testToString() {
+    void toStringTest() {
         String expected = "Coffee: 15\nMilk: 15\nSugar: 15\nChocolate: 15\n";
         assertEquals(expected, inv.toString());
     }

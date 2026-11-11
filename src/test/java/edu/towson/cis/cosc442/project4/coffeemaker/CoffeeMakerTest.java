@@ -16,14 +16,10 @@ public class CoffeeMakerTest {
     private Recipe rec3;
     private Recipe rec4;
     private Recipe rec5;
-    private Recipe nullrec;
-    private Inventory inv;
-    private Inventory emptInv;
 
     @BeforeEach 
     void Setup() {
         cm = new CoffeeMaker();
-        Inventory spud = cm.checkInventory();
         rec = new Recipe();
         rec.setName("rec1");
         rec.setPrice(10);
@@ -59,7 +55,6 @@ public class CoffeeMakerTest {
         rec5.setAmtCoffee(10);
         rec5.setAmtMilk(8);
         rec5.setAmtSugar(6);
-        nullrec = new Recipe();
     }
     @AfterEach
     void Teardown() {
@@ -69,8 +64,6 @@ public class CoffeeMakerTest {
         rec3 = null;
         rec4 = null;
         rec5 = null;
-        nullrec = null;
-        inv = null;
     }
 
 

@@ -75,7 +75,7 @@ public class CoffeeMaker {
                 }
             }
         }
-        return canDeleteRecipe;
+        return !canDeleteRecipe;
     }
 
     /**

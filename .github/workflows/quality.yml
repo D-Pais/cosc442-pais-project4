@@ -22,7 +22,7 @@ jobs:
           cache: maven
 
       - name: Run JUnit regression tests
-        run: ./mvnw test
+        run: chmod +x mvnw && ./mvnw test
 
       # Add PIT mutation testing later
 

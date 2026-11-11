@@ -114,5 +114,9 @@ public class RecipeTest {
         assert(!rec.equals(rec2));
     }
 
+    @Test
+    void toStringTest() {
+        assertEquals("rec1", rec.toString());
+    }
 
 }

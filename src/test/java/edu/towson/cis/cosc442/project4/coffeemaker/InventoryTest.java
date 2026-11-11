@@ -33,11 +33,15 @@ public class InventoryTest {
     void testCoffeeSetGet() {
         inv.setCoffee(20);
         assertEquals(20, inv.getCoffee());
+        inv.setCoffee(1);
+        assertEquals(1, inv.getCoffee());
         inv.setCoffee(0);
         assertEquals(0, inv.getCoffee());
     }
     @Test
     void setCoffeeNegativeTest() {
+        inv.setCoffee(-1);
+        assertEquals(0, inv.getCoffee());
         inv.setCoffee(-5);
         assertEquals(0, inv.getCoffee());
     }
@@ -46,9 +50,15 @@ public class InventoryTest {
     void testMilkSetGet() {
         inv.setMilk(25);
         assertEquals(25, inv.getMilk());
+        inv.setMilk(1);
+        assertEquals(1, inv.getMilk());
+        inv.setMilk(0);
+        assertEquals(0, inv.getMilk());
     }
     @Test
     void setMilkNegativeTest() {
+        inv.setMilk(-1);
+        assertEquals(0, inv.getMilk());
         inv.setMilk(-10);
         assertEquals(0, inv.getMilk());
     }
@@ -57,9 +67,15 @@ public class InventoryTest {
     void testSugarSetGet() {
         inv.setSugar(30);
         assertEquals(30, inv.getSugar());
+        inv.setSugar(1);
+        assertEquals(1, inv.getSugar());
+        inv.setSugar(0);
+        assertEquals(0, inv.getSugar());
     }
     @Test
     void setSugarNegativeTest() {
+        inv.setSugar(-1);
+        assertEquals(0, inv.getSugar());
         inv.setSugar(-15);
         assertEquals(0, inv.getSugar());
     }
@@ -68,15 +84,26 @@ public class InventoryTest {
     void testChocolateSetGet() {
         inv.setChocolate(35);
         assertEquals(35, inv.getChocolate());
+        inv.setChocolate(1);
+        assertEquals(1, inv.getChocolate());
+        inv.setChocolate(0);
+        assertEquals(0, inv.getChocolate());
     }
     @Test
     void setChocolateNegativeTest() {
+        inv.setChocolate(-1);
+        assertEquals(0, inv.getChocolate());
         inv.setChocolate(-20);
         assertEquals(0, inv.getChocolate());
     }
 
     @Test
     void enoughIngredientsTest() {
+        assert(inv.enoughIngredients(rec));
+        rec.setAmtChocolate(15);
+        rec.setAmtCoffee(15);
+        rec.setAmtMilk(15);
+        rec.setAmtSugar(15);
         assert(inv.enoughIngredients(rec));
     }
     @Test
@@ -92,6 +119,11 @@ public class InventoryTest {
         inv.setMilk(15);
         inv.setSugar(3);
         assert(!inv.enoughIngredients(rec));
+        inv.setChocolate(1);
+        inv.setCoffee(2);
+        inv.setMilk(3);
+        inv.setSugar(4);
+        assert(inv.enoughIngredients(rec));
     }
 
     @Test

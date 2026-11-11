@@ -158,7 +158,10 @@ public class CoffeeMaker {
             canMakeCoffee = false;
         }
         if (canMakeCoffee) {
-            inventory.setCoffee(inventory.getCoffee() + r.getAmtCoffee());
+            //added by myself
+            //initially confused if this fault was a fault or if the coffee machine stored the coffee it made.  after consideration
+            //following line is edited from "inventory.getCoffee() + r.getAmtCoffee()" to "inventory.getCoffee() - r.getAmtCoffee()"
+            inventory.setCoffee(inventory.getCoffee() - r.getAmtCoffee());
             inventory.setMilk(inventory.getMilk() - r.getAmtMilk());
             inventory.setSugar(inventory.getSugar() - r.getAmtSugar());
             inventory.setChocolate(inventory.getChocolate() - r.getAmtChocolate());
